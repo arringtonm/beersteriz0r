@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
   template: `
   <div class="container">
     <div class="jumbotron">
-      <h1>_rename</h1>
+      <h1>tap-room</h1>
     </div>
   </div>
   `
