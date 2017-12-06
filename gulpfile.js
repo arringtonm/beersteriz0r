@@ -75,7 +75,7 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(['resources/js/*.js'], ['js-sync']);
   gulp.watch(['*.html'], ['html-sync']);
   gulp.watch(['resources/styles/*.css', 'resources/styles/*.scss'], ['css-sync']);
-  gulp.watch(['src/*.ts'], ['ts-sync']);
+  gulp.watch(['src/*'], ['ts-sync']);
 });
 
 gulp.task('js-sync', function(){
