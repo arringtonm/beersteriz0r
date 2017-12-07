@@ -1,8 +1,8 @@
 <div class="container">
   <div class="jumbotron">
-    <h1>Keg App</h1>
+    <h1>beersteriz0r 0.0.1 alpha</h1>
   </div>
-  <div *ngFor="let keg of kegs" class="keg">
+  <div *ngFor="let keg of kegs; let i = index" class="keg">
     <div class="keg-info">
       <div class="keg-left">
         <p class="keg-name">{{keg.name}} <span class="keg-style">({{keg.style}})</span></p>
@@ -28,16 +28,17 @@
         </div>
       </div>
       <div class="keg-right">
-        <p class="keg-price">${{keg.price.toFixed(2)}}</p>
+        <p [class]="keg.isOnSale ? 'keg-price-sale keg-price' : 'keg-price'">${{keg.price.toFixed(2)}}</p>
         <p *ngIf="keg.abv > 6.9" class="keg-size">12oz / {{keg.abv}}% ABV <img src="http://d2trtkcohkrm90.cloudfront.net/images/emoji/apple/ios-10/256/skull-and-crossbones.png" class="skull"></p>
         <p *ngIf="keg.abv <= 6.9" class="keg-size">16oz / {{keg.abv}}% ABV</p>
       </div>
 
     </div>
     <div class="more-buttins">
-      <button type="button" class="btn btn-info" (click)="putOnSale(keg)">Lo Price</button><br>
-      <button type="button" class="btn btn-warning edit" data-toggle="modal" data-target="#keg-modal" (click)="newKeg=keg; editStatus='Edit'">Edit Keg</button><br>
-      <button type="button" class="btn btn-danger" (click)="removeKeg(keg)">Remove</button>
+      <button type="button" class="btn btn-info" (click)="toggleSale(keg)">{{toggleSaleButton(keg)}}</button><br>
+      <button type="button" class="btn btn-warning edit" data-toggle="modal" data-target="#keg-modal" (click)="newKeg=keg; editStatus='Edit'">Edit Kiig</button><br>
+      <button type="button" class="btn btn-danger" (click)="removeKeg(i)">Remove</button><br>
+      <button type="button" class="btn btn-success" (click)="keg.pints=124">Restock</button>
     </div>
 
   </div>

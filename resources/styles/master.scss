@@ -43,6 +43,10 @@
   font-weight: 800;
 }
 
+.keg-price-sale {
+  color: #5cb85c;
+}
+
 .keg-name {
   font-size: 24px;
   font-weight: 800;
@@ -62,9 +66,13 @@
   // background-color: red;
 }
 
+
+
 .more-buttins button {
   margin-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  // margin-top: 7px;
+  // margin-bottom: 10px;
 
 }
 
@@ -76,4 +84,11 @@
 .skull {
   height: 20px;
   width: 20px;
+}
+
+.jumbotron {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  border-radius: 5px;
 }

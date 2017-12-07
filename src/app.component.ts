@@ -37,7 +37,20 @@ export class AppComponent {
 
   toggleSale(keg) {
     keg.isOnSale = !keg.isOnSale;
+    if (keg.isOnSale === true) { keg.price -=1 }
+    if (keg.isOnSale === false) { keg.price +=1 }
   }
+
+  toggleSaleButton(keg) {
+    if (keg.isOnSale === true) { return "++ Price" }
+    else if (keg.isOnSale === false) { return "--- Price" }
+  }
+
+
+  removeKeg(index) {
+    this.kegs.splice(index,1);
+  }
+
 
   percentage(keg) {
     if (keg.style === "Sanitizer") { return 7 }
