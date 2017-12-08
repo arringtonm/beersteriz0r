@@ -74,7 +74,9 @@ body {
   // background-color: red;
 }
 
-
+.top-buttons {
+  margin-bottom: 20px;
+}
 
 .more-buttins button {
   margin-left: 20px;
@@ -87,6 +89,9 @@ body {
 .dropdown {
   display: inline;
   width: 60px;
+}
+.topdropdown {
+  transform: translateY(1px);
 }
 
 .skull {

@@ -4,7 +4,7 @@ import {Keg} from './keg.model';
 @Component({
   selector: 'keg-list',
   template: `
-    <div *ngFor="let keg of childKegList; let i = index" class="keg">
+    <div *ngFor="let keg of childKegList | alphabeticalness:sortTypeListener; let i = index" class="keg">
       <div class="keg-info">
         <div class="keg-left">
           <p class="keg-name">{{keg.name}} <span class="keg-style">({{keg.style}})</span></p>
@@ -47,6 +47,7 @@ import {Keg} from './keg.model';
 
 export class KegListComponent {
   @Input() childKegList: Keg;
+  @Input() sortTypeListener;
   @Output() editWasClickedSender = new EventEmitter();
   @Output() removeKegWasClickedSender = new EventEmitter();
 

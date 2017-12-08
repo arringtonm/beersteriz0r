@@ -8,8 +8,14 @@ import {Keg} from './keg.model';
       <div class="jumbotron">
         <h1>beersteriz0r 0.0.2 alpha</h1>
       </div>
-      <keg-list (removeKegWasClickedSender)="removeKeg($event)" (editWasClickedSender)="editListener($event)" [childKegList]="kegList"></keg-list>
-      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#keg-modal" (click)="editStatus='Add'; resetKeg()">Add Keg</button>
+      <div class="top-buttons">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#keg-modal" (click)="editStatus='Add'; resetKeg()">Add Keg</button>
+        <select #sortType class="form-control dropdown topdropdown">
+          <option value="alphabeticalness">A-Z</option>
+          <option value="price">Price</option>
+        </select>
+      </div>
+      <keg-list [sortTypeListener]="sortType.value" (removeKegWasClickedSender)="removeKeg($event)" (editWasClickedSender)="editListener($event)" [childKegList]="kegList"></keg-list>
     </div>
 
     <!-- Modal -->
