@@ -1,3 +1,7 @@
+## Beersteriz0r
+
+Beersteriz0r is a content management system for a pub in the style of the flatscreen TV style displays now common in beer bars. It lets users see a visual representation of keg fullness, set and display happy hour pricing, etc.
+
 ## Specs
 
 | Behavior | Input | Output | Done |
